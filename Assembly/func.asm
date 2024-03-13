@@ -8,6 +8,8 @@
 [global GetEDIRegisterValue]
 [global GetEBPRegisterValue]
 [global GetESPRegisterValue]
+[global GetTopStackValue]
+[global GetSegmentNotPresentInstruction] ;C function to include: extern "C" int GetSegmentNotPresentInstruction();
 [global Test_INT]
 
 GetEAXRegisterValue:
@@ -40,9 +42,6 @@ GetEBPRegisterValue:
 GetESPRegisterValue:
     mov eax, esp ; Move the value of ESP into EAX
     ret ; Return the value of EAX
-
 Test_INT:
-    mov eax, 0
-    int 70h ; Call the interrupt 0x70 (112 in decimal) Kernel function
+    int 0 ; Call the interrupt 0x70 (112 in decimal) Kernel function
     ret ; Return the value of EAX
-    

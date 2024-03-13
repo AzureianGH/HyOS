@@ -242,10 +242,72 @@ isr_48:
 	cli
 	push 48
 	jmp irq_basic
-	
+isr_49:
+	cli
+	push 49
+	jmp irq_basic
+isr_50:
+	cli
+	push 50
+	jmp irq_basic
+isr_51:
+	cli
+	push 51
+	jmp irq_basic
+isr_52:
+	cli
+	push 52
+	jmp irq_basic
+isr_53:
+	cli
+	push 53
+	jmp irq_basic
+isr_54:
+	cli
+	push 54
+	jmp irq_basic
+isr_55:
+	cli
+	push 55
+	jmp irq_basic
+isr_56:
+	cli
+	push 56
+	jmp irq_basic
+isr_57:
+	cli
+	push 57
+	jmp irq_basic
+isr_58:
+	cli
+	push 58
+	jmp irq_basic
+isr_59:
+	cli
+	push 59
+	jmp irq_basic
+isr_60:	
+	cli
+	push 60
+	jmp irq_basic
+isr_61:	
+	cli
+	push 61
+	jmp irq_basic
+isr_62:	
+	cli
+	push 62
+	jmp irq_basic
+isr_63:
+	cli
+	push 63
+	jmp irq_basic
+isr_64:
+	cli
+	push 64
+	jmp irq_basic
 isr_basic:
 	call interrupt_handler
-	
 	pop eax
     
     sti
@@ -319,7 +381,22 @@ idt:
 	dw isr_46, 8, 0x8e00, 0x0000
 	dw isr_47, 8, 0x8e00, 0x0000
 	dw isr_48, 8, 0x8e00, 0x0000
-	
+	dw isr_49, 8, 0x8e00, 0x0000
+	dw isr_50, 8, 0x8e00, 0x0000
+	dw isr_51, 8, 0x8e00, 0x0000
+	dw isr_52, 8, 0x8e00, 0x0000
+	dw isr_53, 8, 0x8e00, 0x0000
+	dw isr_54, 8, 0x8e00, 0x0000
+	dw isr_55, 8, 0x8e00, 0x0000
+	dw isr_56, 8, 0x8e00, 0x0000
+	dw isr_57, 8, 0x8e00, 0x0000
+	dw isr_58, 8, 0x8e00, 0x0000
+	dw isr_59, 8, 0x8e00, 0x0000
+	dw isr_60, 8, 0x8e00, 0x0000
+	dw isr_61, 8, 0x8e00, 0x0000
+	dw isr_62, 8, 0x8e00, 0x0000
+	dw isr_63, 8, 0x8e00, 0x0000
+	dw isr_64, 8, 0x8e00, 0x0000
 idtr:
 	idt_size_in_bytes	: 	dw idtr - idt
 	idt_base_address	: 	dd idt
